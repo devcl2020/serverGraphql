@@ -6,6 +6,7 @@ import {useQuery} from "@apollo/client";
 import {GET_ALL_EMPRESAS, GET_ALL_EMITIDOS} from "../Graphql/Queries";
 
 import { useHistory } from "react-router-dom";
+import {isOutputType} from "graphql";
 
 const Emitidos = () => {
 
@@ -48,6 +49,8 @@ const Emitidos = () => {
                     <th>Tipo Doc</th>
                     <th>Folio</th>
                     <th>Fecha Emision</th>
+                    <th>Rut Receptor</th>
+                    <th>Nombre Receptor</th>
                     <th>trackid</th>
                     <th>Estado</th>
                 </tr>
@@ -57,11 +60,35 @@ const Emitidos = () => {
             {data.getAllEmitidos.map((dte:any) =>(
                 <tr onClick={() => handleOnClick(dte)}>
                     <td>{dte.id}</td>
-                    <td>{dte.tipodoc}</td>
+                    <td>{
+                        dte.tipodoc == "39" ?
+                            (
+                                "Boleta Electrónica"
+                            ):dte.tipodoc == "33" ?
+                                (
+                                    "Factura Electrónica"
+                                ):null
+                    }
+                    </td>
+
                     <td>{dte.folio}</td>
                     <td>{dte.fechaemision}</td>
+                    <td>{dte.rutreceptor}</td>
+                    <td>"ejemplo"</td>
                     <td>{dte.trackid}</td>
-                    <td>{dte.estado}</td>
+                    <td>{
+                        dte.estado == "3" ?
+                          (
+                              "Enviado SII"
+                          ):dte.estado == "2" ?
+                                (
+                                    "XML SII Generado"
+                                ):null
+                    }
+
+                        </td>
+
+
                 </tr>
             ))}
             </tbody>

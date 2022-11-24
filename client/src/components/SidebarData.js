@@ -53,8 +53,8 @@ export const SidebarData = [
         ]
     },
     {
-        title: 'Products',
-        path: '/products',
+        title: 'Folios',
+        path: '/folios',
         icon: <FaIcons.FaCartPlus />
     },
     {

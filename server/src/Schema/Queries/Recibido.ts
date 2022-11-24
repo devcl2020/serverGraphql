@@ -1,16 +1,12 @@
-import {GraphQLInt, GraphQLList, GraphQLString} from "graphql";
-import {Emitidos} from "../../Entities/Emitidos";
-import {Detalle} from "../../Entities/Detalle"
+import {GraphQLList, GraphQLString} from "graphql";
+import {Between} from "typeorm";
+import {RecibidosType} from "../TypeDefs/Recibido";
+import {Recibidos} from "../../Entities/Recibidos";
 import {EmitidosType} from "../TypeDefs/Emitido";
-import {DetalleType} from "../TypeDefs/Detalle";
-import {Users} from "../../Entities/Users";
-import {Caf} from "../../Entities/Caf";
-import {Between, Raw} from "typeorm";
-import {CafType} from "../TypeDefs/Caf";
+import {Emitidos} from "../../Entities/Emitidos";
 
-
-export const GET_EMITIDO = {
-    type: new GraphQLList(EmitidosType),
+export const GET_RECIBIDO = {
+    type: new GraphQLList(RecibidosType),
     args: {
         estado: {type: GraphQLString},
         fechaDesde: {type: GraphQLString},
@@ -37,7 +33,7 @@ export const GET_EMITIDO = {
                             if (args.estado) {
 
                                 if (args.tipoDoc) {
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -48,7 +44,7 @@ export const GET_EMITIDO = {
 
                                     })
                                 } else {
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -61,7 +57,7 @@ export const GET_EMITIDO = {
                             } else {
 
                                 if (args.tipoDoc) {
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -72,7 +68,7 @@ export const GET_EMITIDO = {
                                     })
                                 } else {
 
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -86,7 +82,7 @@ export const GET_EMITIDO = {
 
                             if (args.estado) {
                                 if (args.tipoDoc) {
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -96,7 +92,7 @@ export const GET_EMITIDO = {
 
                                     })
                                 } else {
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -107,7 +103,7 @@ export const GET_EMITIDO = {
                                 }
                             } else {
                                 if (args.tipoDoc) {
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -117,7 +113,7 @@ export const GET_EMITIDO = {
                                     })
                                 } else {
 
-                                    return Emitidos.find({
+                                    return Recibidos.find({
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
@@ -129,7 +125,7 @@ export const GET_EMITIDO = {
                         }
                     }
 
-                    // return Emitidos.find({
+                    // return Recibidos.find({
                     //     where: {
                     //         fechaemision: Between(fechaDesde, fechaHasta),
                     //         folio: Between(folioDesde, folioDesde),
@@ -143,7 +139,7 @@ export const GET_EMITIDO = {
                         if (args.estado) {
 
                             if (args.tipoDoc) {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         folio: Between(folioDesde, folioHasta),
@@ -154,7 +150,7 @@ export const GET_EMITIDO = {
 
                                 })
                             } else {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         rutreceptor: rutReceptor,
@@ -166,7 +162,7 @@ export const GET_EMITIDO = {
                         } else {
 
                             if (args.tipoDoc) {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         rutreceptor: rutReceptor,
@@ -175,7 +171,7 @@ export const GET_EMITIDO = {
 
                                 })
                             } else {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         rutreceptor: rutReceptor,
@@ -186,7 +182,7 @@ export const GET_EMITIDO = {
                     } else {
                         if (args.estado) {
                             if (args.tipoDoc) {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         folio: Between(folioDesde, folioHasta),
@@ -195,7 +191,7 @@ export const GET_EMITIDO = {
                                     },
                                 })
                             } else {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         estado: estado,
@@ -205,7 +201,7 @@ export const GET_EMITIDO = {
                             }
                         } else {
                             if (args.tipoDoc) {
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         folio: Between(folioDesde, folioHasta),
@@ -215,7 +211,7 @@ export const GET_EMITIDO = {
                                 })
                             } else {
 
-                                return Emitidos.find({
+                                return Recibidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                     },
@@ -228,7 +224,7 @@ export const GET_EMITIDO = {
             }
         } else {
 
-            return Emitidos.find({
+            return Recibidos.find({
                 where: {
                     fechaemision:
                         Between(fechaDesde, fechaDesde),
@@ -239,11 +235,11 @@ export const GET_EMITIDO = {
 
 
         // if (args.estado) {
-        //    return Emitidos.find({estado: estado});
+        //    return Recibidos.find({estado: estado});
         // }
         //
         // if (args.rutemisor) {
-        //     return Emitidos.find({rutemisor: rutemisor});
+        //     return Recibidos.find({rutemisor: rutemisor});
         // }
 
 
@@ -253,57 +249,19 @@ export const GET_EMITIDO = {
 
 };
 
-export const GET_EMITIDO_BYID = {
-    type: new GraphQLList(EmitidosType),
+
+export const GET_RECIBIDO_BYID = {
+    type: new GraphQLList(RecibidosType),
     args: {
         id: {type: GraphQLString},
     },
     resolve(parent: any, args: any) {
         const {id} = args;
 
-        return Emitidos.find({
+        return Recibidos.find({
             id: id
         });
 
 
     },
 };
-
-
-export const GET_EMITIDO_BY_ESTADO = {
-    type: new GraphQLList(EmitidosType),
-    args: {
-        estado: {type: GraphQLString},
-    },
-    resolve(parent: any, args: any) {
-        const {estado} = args;
-
-        return Emitidos.find({
-            where: {
-                estado: estado
-            },
-        })
-    }
-
-
-
-
-
-};
-
-export const GET_EMITIDO_BYTRACKID = {
-    type: new GraphQLList(EmitidosType),
-    args: {
-        trackid: {type: GraphQLString},
-    },
-    resolve(parent: any, args: any) {
-        const {trackid} = args;
-
-        return Emitidos.find({
-            trackid: trackid
-        });
-
-
-    },
-};
-

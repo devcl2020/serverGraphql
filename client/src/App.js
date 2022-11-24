@@ -10,6 +10,7 @@ import {ApolloClient, ApolloProvider, InMemoryCache, useQuery} from "@apollo/cli
 import {GET_ALL_EMPRESAS} from "./Graphql/Queries";
 import Emitidos from "./components/Emitidos";
 import DetalleEmitido from "./components/DetalleEmitido";
+import Folios from "./components/Folios";
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
                 <Route path='/Documentos' exact component={Documentos} />
                 <Route path='/Documentos/BoletaElectronica' exact component={InvoicePage} />
                 <Route path='/Documentos/Emitidos' exact component={Emitidos} />
-                <Route path='/reports/reports3' exact component={ReportsThree} />
+                <Route path='/folios' exact component={Folios} />
                 <Route path='/team' exact component={Team} />
                 <Route path='/DetalleEmitidos' exact component={DetalleEmitido} />
             </Switch>

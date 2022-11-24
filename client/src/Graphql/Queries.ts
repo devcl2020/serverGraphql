@@ -25,7 +25,8 @@ query{
         folio,
         fechaemision, 
         trackid,
-        estado
+        estado, 
+        rutreceptor
       }
      }
 `;

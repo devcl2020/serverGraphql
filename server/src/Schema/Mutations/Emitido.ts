@@ -20,6 +20,7 @@ const DetalleInput = new GraphQLInputObjectType({
 export const CREATE_DTE = {
     type: EmitidosType,
     args: {
+        id: {type: GraphQLInt},
         tipodoc: {type: GraphQLString},
         folio: {type: GraphQLString},
         fechaemision: {type: GraphQLString},
@@ -27,6 +28,7 @@ export const CREATE_DTE = {
         indservicio: {type: GraphQLString},
         rutemisor: {type: GraphQLString},
         rutreceptor: {type: GraphQLString},
+        nombrereceptor: {type: GraphQLString},
 
         montoneto: {type: GraphQLString},
         tasaiva: {type: GraphQLString},
@@ -35,6 +37,12 @@ export const CREATE_DTE = {
         trackid: {type: GraphQLString},
 
         estado: {type: GraphQLInt},
+
+        idcaf: {type: GraphQLString},
+
+        xml: {type: GraphQLString},
+
+        estadosii: {type: GraphQLString},
 
         detalles: {
             type: new GraphQLList(DetalleInput)
@@ -50,12 +58,16 @@ export const CREATE_DTE = {
             indservicio,
             rutemisor,
             rutreceptor,
+            nombrereceptor,
             montoneto,
             tasaiva,
             iva,
             montototal,
             trackid,
             estado,
+            idcaf,
+            xml,
+            estadosii,
             detalles
         } = args;
 
@@ -69,13 +81,19 @@ export const CREATE_DTE = {
             indservicio,
             rutemisor,
             rutreceptor,
+            nombrereceptor,
             montoneto,
             tasaiva,
             iva,
             montototal,
             trackid,
-            estado
+            estado,
+            idcaf,
+            xml,
+            estadosii
         });
+
+
 
 
         a.map((detalle: any) => {
@@ -85,6 +103,8 @@ export const CREATE_DTE = {
                 const dteRes = JSON.parse(dte_id, (key, value) => {
                     return value;
                 });
+
+                args.id = dte_id;
 
                 dteRes.map((dteres: any) => {
                     console.log("DTEID: " + dteres.id)
@@ -112,6 +132,7 @@ export const CREATE_DTE = {
 
         return args;
     },
+
 };
 
 export const UPDATE_ESTADO = {
@@ -120,9 +141,31 @@ export const UPDATE_ESTADO = {
         rutemisor: {type: GraphQLString},
         tipodoc: {type: GraphQLString},
         folio: {type: GraphQLString},
+        estado: {type: GraphQLString}
+    },
+    async resolve(parent: any, args: any) {
+        const {rutemisor,tipodoc, folio,  estado} = args;
+        const dte = await Emitidos.findOne({rutemisor: rutemisor,tipodoc: tipodoc, folio: folio });
+
+        if (!dte) {
+            throw new Error("DTE DOESNT EXIST");
+        }
+
+        await Emitidos.update({rutemisor: rutemisor,tipodoc: tipodoc, folio: folio }, {estado: estado}, );
+        return {successful: true, message: "DTE UPDATED"};
+
+    },
+};
+
+
+export const UPDATE_ESTADO_TRACKID = {
+    type: MessageType,
+    args: {
+        rutemisor: {type: GraphQLString},
+        tipodoc: {type: GraphQLString},
+        folio: {type: GraphQLString},
         estado: {type: GraphQLString},
         trackid: {type: GraphQLString},
-
 
     },
     async resolve(parent: any, args: any) {
@@ -134,6 +177,30 @@ export const UPDATE_ESTADO = {
         }
 
         await Emitidos.update({rutemisor: rutemisor,tipodoc: tipodoc, folio: folio }, {estado: estado, trackid: trackid}, );
+        return {successful: true, message: "DTE UPDATED"};
+
+    },
+};
+
+export const UPDATE_ESTADOSII = {
+    type: MessageType,
+    args: {
+        rutemisor: {type: GraphQLString},
+        tipodoc: {type: GraphQLString},
+        trackid: {type: GraphQLString},
+        estado: {type: GraphQLString},
+        estadoSII: {type: GraphQLString}
+
+    },
+    async resolve(parent: any, args: any) {
+        const {rutemisor,tipodoc, trackid,  estado, estadoSII} = args;
+        const dte = await Emitidos.findOne({rutemisor: rutemisor,tipodoc: tipodoc, trackid: trackid });
+
+        if (!dte) {
+            throw new Error("DTE DOESNT EXIST");
+        }
+
+        await Emitidos.update({rutemisor: rutemisor,tipodoc: tipodoc, trackid: trackid }, {estado: estado, estadosii: estadoSII}, );
         return {successful: true, message: "DTE UPDATED"};
 
     },

@@ -2,7 +2,7 @@ import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typ
 import {Xml} from "./Xml";
 
 @Entity()
-export class Emitidos extends BaseEntity {
+export class Recibidos extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id!: number;
@@ -26,7 +26,7 @@ export class Emitidos extends BaseEntity {
     rutreceptor!: string;
 
     @Column()
-    nombrereceptor!: string;
+    nombreemisor!: string;
 
     @Column()
     montoneto!: string;
@@ -41,13 +41,7 @@ export class Emitidos extends BaseEntity {
     montototal!: string;
 
     @Column()
-    trackid!: string;
-
-    @Column()
     estado!: number;
-
-    @Column()
-    idcaf!: string;
 
     @Column()
     xml!: string;

@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c63feaa1-098e-4d6c-b59e-e0ea24ad9b0c" name="Changes" comment="" />
+    <list default="true" id="c63feaa1-098e-4d6c-b59e-e0ea24ad9b0c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Folios.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/Entities/Caf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/Schema/Mutations/Caf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/Schema/Queries/Caf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/Schema/Queries/Cafs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/Schema/TypeDefs/Caf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphql/Queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphql/Queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Emitidos.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Emitidos.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Schema/Mutations/Emitido.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Schema/Mutations/Emitido.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Schema/TypeDefs/Emitido.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Schema/TypeDefs/Emitido.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Schema/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Schema/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/index.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1xxM6efhkvOmG8lVRFFTzkYArTN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,6 +60,15 @@
       <workItem from="1631310451622" duration="33000" />
       <workItem from="1631310503492" duration="19000" />
       <workItem from="1631310553405" duration="2823000" />
+      <workItem from="1642773945079" duration="1101000" />
+      <workItem from="1643024672011" duration="550000" />
+      <workItem from="1643834581902" duration="2004000" />
+      <workItem from="1644259147278" duration="202000" />
+      <workItem from="1649120886787" duration="984000" />
+      <workItem from="1649853282302" duration="408000" />
+      <workItem from="1657657811786" duration="937000" />
+      <workItem from="1657838032956" duration="184000" />
+      <workItem from="1657996218555" duration="1003000" />
     </task>
     <servers />
   </component>
