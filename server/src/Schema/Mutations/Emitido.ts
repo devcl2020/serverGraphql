@@ -13,6 +13,7 @@ const DetalleInput = new GraphQLInputObjectType({
         cantidad: {type: GraphQLString},
         precio: {type: GraphQLString},
         montoitem: {type: GraphQLString},
+        coditem: {type: GraphQLString},
 
     })
 });
@@ -46,7 +47,9 @@ export const CREATE_DTE = {
 
         detalles: {
             type: new GraphQLList(DetalleInput)
-        }
+        },
+
+        anulado: {type: GraphQLInt},
     }
     ,
     async resolve(parent: any, args: any) {
@@ -68,7 +71,8 @@ export const CREATE_DTE = {
             idcaf,
             xml,
             estadosii,
-            detalles
+            detalles,
+            anulado
         } = args;
 
         // console.log(args)
@@ -90,7 +94,8 @@ export const CREATE_DTE = {
             estado,
             idcaf,
             xml,
-            estadosii
+            estadosii,
+            anulado
         });
 
 
@@ -115,10 +120,11 @@ export const CREATE_DTE = {
                 let cantidad = detalle.cantidad;
                 let precio = detalle.precio;
                 let montoitem = detalle.montoitem
+                let coditem = detalle.coditem
 
                 dte_id = parseInt(dte_id, 10);
 
-                Detalle.insert({dte_id, nombreitem, cantidad, precio, montoitem})
+                Detalle.insert({dte_id, nombreitem, cantidad, precio, montoitem, coditem})
                 // console.log("EEE: " + detalle.nombreItem)
             }
         )

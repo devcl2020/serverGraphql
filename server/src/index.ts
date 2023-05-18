@@ -13,24 +13,30 @@ import {ListDistrSii} from "./Entities/ListDistrSii";
 import {History} from "./Entities/History";
 import {Recibidos} from "./Entities/Recibidos";
 import {DetalleRecep} from "./Entities/DetalleRecep";
+import {Parametros} from "./Entities/Parametros";
+import {Detallemenuusuario} from "./Entities/Detallemenuusuario";
+import {Menuprincipal} from "./Entities/Menuprincipal";
+import {Clientes} from "./Entities/Clientes";
 
 const main = async () => {
   await createConnection({
-    // type: "postgres",
-    // // host: "54.69.31.7",
-    // host: "localhost",
-    // database: "handy",
-    // username: "postgres",
-    // password: "PgAdmin123",
+    type: "postgres",
+    // host: "54.69.31.7",
 
-    type: "mysql",
-    host: "45.239.111.70",
-    database: "toquesil_handy",
-    username: "toquesil_admin",
-    password: "@leJandr0",
+    host: "localhost",
+    database: "handy",
+    username: "postgres",
+    password: "PgAdmin123",
+
+    // type: "mysql",
+    // host: "45.239.111.70",
+    // database: "toquesil_handy",
+    // username: "toquesil_admin",
+    // password: "@leJandr0",
     logging: true,
-    synchronize: true,
-    entities: [Users, Detalle, DetalleRecep, Empresas, Emitidos, Recibidos,Caf, Xml, ListDistrSii, History],
+    synchronize: false,
+    entities: [Users, Detalle, DetalleRecep, Empresas, Emitidos, Recibidos,Caf, Xml, ListDistrSii, History,
+      Parametros, Detallemenuusuario, Menuprincipal, Clientes],
 
   });
 
@@ -45,7 +51,7 @@ const main = async () => {
     })
   );
 
-  app.listen(80, () => {
+  app.listen(3001, () => {
     console.log("SERVER RUNNING ON PORT 3001");
   });
 };

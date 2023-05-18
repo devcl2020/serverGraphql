@@ -44,6 +44,8 @@ export const GET_EMITIDO = {
                                             rutreceptor: rutReceptor,
                                             estado: estado,
                                             tipodoc: tipoDoc
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -54,6 +56,8 @@ export const GET_EMITIDO = {
                                             folio: Between(folioDesde, folioHasta),
                                             rutreceptor: rutReceptor,
                                             estado: estado
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -67,6 +71,8 @@ export const GET_EMITIDO = {
                                             folio: Between(folioDesde, folioHasta),
                                             rutreceptor: rutReceptor,
                                             tipodoc: tipoDoc
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -77,6 +83,8 @@ export const GET_EMITIDO = {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
                                             rutreceptor: rutReceptor,
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -92,6 +100,8 @@ export const GET_EMITIDO = {
                                             folio: Between(folioDesde, folioHasta),
                                             estado: estado,
                                             tipodoc: tipoDoc
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -101,6 +111,8 @@ export const GET_EMITIDO = {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
                                             estado: estado,
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -112,6 +124,8 @@ export const GET_EMITIDO = {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
                                             tipodoc: tipoDoc
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -121,6 +135,8 @@ export const GET_EMITIDO = {
                                         where: {
                                             fechaemision: Between(fechaDesde, fechaHasta),
                                             folio: Between(folioDesde, folioHasta),
+                                        },order: {
+                                            id: "DESC"
                                         },
 
                                     })
@@ -150,6 +166,8 @@ export const GET_EMITIDO = {
                                         rutreceptor: rutReceptor,
                                         estado: estado,
                                         tipodoc: tipoDoc
+                                    },order: {
+                                        id: "DESC"
                                     },
 
                                 })
@@ -159,6 +177,8 @@ export const GET_EMITIDO = {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         rutreceptor: rutReceptor,
                                         estado: estado
+                                    },order: {
+                                        id: "DESC"
                                     },
 
                                 })
@@ -171,6 +191,8 @@ export const GET_EMITIDO = {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         rutreceptor: rutReceptor,
                                         tipodoc: tipoDoc
+                                    },order: {
+                                        id: "DESC"
                                     },
 
                                 })
@@ -179,6 +201,8 @@ export const GET_EMITIDO = {
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         rutreceptor: rutReceptor,
+                                    },order: {
+                                        id: "DESC"
                                     },
                                 })
                             }
@@ -192,6 +216,8 @@ export const GET_EMITIDO = {
                                         folio: Between(folioDesde, folioHasta),
                                         estado: estado,
                                         tipodoc: tipoDoc
+                                    },order: {
+                                        id: "DESC"
                                     },
                                 })
                             } else {
@@ -199,6 +225,8 @@ export const GET_EMITIDO = {
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         estado: estado,
+                                    },order: {
+                                        id: "DESC"
                                     },
 
                                 })
@@ -210,6 +238,8 @@ export const GET_EMITIDO = {
                                         fechaemision: Between(fechaDesde, fechaHasta),
                                         folio: Between(folioDesde, folioHasta),
                                         tipodoc: tipoDoc
+                                    },order: {
+                                        id: "DESC"
                                     },
 
                                 })
@@ -218,6 +248,8 @@ export const GET_EMITIDO = {
                                 return Emitidos.find({
                                     where: {
                                         fechaemision: Between(fechaDesde, fechaHasta),
+                                    },order: {
+                                        id: "DESC"
                                     },
 
                                 })

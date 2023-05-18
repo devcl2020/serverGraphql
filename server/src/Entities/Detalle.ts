@@ -20,4 +20,7 @@ export class Detalle extends BaseEntity {
     @Column()
     montoitem!: string;
 
+    @Column()
+    coditem!: string;
+
 }

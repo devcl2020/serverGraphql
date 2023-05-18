@@ -55,4 +55,7 @@ export class Emitidos extends BaseEntity {
     @Column()
     estadosii!: string;
 
+    @Column()
+    anulado!: number;
+
 }

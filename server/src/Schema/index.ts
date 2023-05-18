@@ -1,7 +1,7 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
 
 
-import { GET_ALL_USERS } from "./Queries/User";
+import {GET_ALL_USERS, GET_PASSWORD_BYUSER} from "./Queries/User";
 import {GET_ALL_EMITIDOS} from "./Queries/Emitidos";
 import {GET_ALL_EMPRESAS} from "./Queries/Empresas";
 
@@ -13,12 +13,16 @@ import {CREATE_CAF, UPDATE_FOLIOACTUAL} from "./Mutations/Caf";
 import {GET_CAF, GET_CAF_ACTIVO, GET_ALL_CAF, GET_CAF_BYID} from "./Queries/Caf";
 import {CREATE_XML} from "./Mutations/Xml";
 import {GET_XML} from "./Queries/Xml";
+import {GET_CLIENTE} from "./Queries/Clientes";
 import {CREATE_DISTR} from "./Mutations/ListaDistrSii";
 import {GET_RECEP_SII} from "./Queries/ListaDistrSii";
 import {CREATE_HISTORY} from "./Mutations/History";
 import {GET_HISTORY} from "./Queries/History";
 import {GET_RECIBIDO, GET_RECIBIDO_BYID} from "./Queries/Recibido";
 import {CREATE_DTE_RECEP} from "./Mutations/Recibido";
+import {GET_ALL_PARAMETROS} from "./Queries/Parametros";
+import {GET_PERFIL_USUARIO} from "./Queries/DetalleMenuUsuario";
+import {GET_ALL_MENUPPAL} from "./Queries/MenuPrincipal";
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQuery",
@@ -39,6 +43,11 @@ const RootQuery = new GraphQLObjectType({
     getXml: GET_XML,
     getRecepSII: GET_RECEP_SII,
     getHistory: GET_HISTORY,
+    getPasswordUser: GET_PASSWORD_BYUSER,
+    getAllParametros: GET_ALL_PARAMETROS,
+    getPerfilUsuario1: GET_PERFIL_USUARIO,
+    getMenuPrincipal: GET_ALL_MENUPPAL,
+    getCliente: GET_CLIENTE,
 
   },
 });

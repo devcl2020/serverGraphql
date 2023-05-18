@@ -6,6 +6,7 @@ export const DetalleType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         dte_id: { type: GraphQLString },
+        coditem: { type: GraphQLString },
         nombreitem: { type: GraphQLString },
         cantidad: { type: GraphQLString },
         precio: { type: GraphQLString },

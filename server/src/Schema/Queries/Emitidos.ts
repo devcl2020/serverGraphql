@@ -5,6 +5,10 @@ import {EmitidosType} from "../TypeDefs/Emitido";
 export const GET_ALL_EMITIDOS= {
     type: new GraphQLList(EmitidosType),
     resolve() {
-        return Emitidos.find();
+        return Emitidos.find({
+            order: {
+                id: "ASC"
+            },
+        });
     },
 };

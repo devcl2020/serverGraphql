@@ -43,6 +43,7 @@ export const EmitidosType = new GraphQLObjectType({
                 return Detalle.find({dte_id: dte.id})
             }
           },
+        anulado: { type: GraphQLString },
         // detalles: {
         //     type: new GraphQLList(DetalleType)
         // },
